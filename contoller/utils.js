@@ -6,12 +6,15 @@ var utils = {
             return false;
         }
     },
-    checkLoginByIdPw:function(param){
+    checkLoginByIdPw:function(params){
     	if (params.pw && params.id) {
 	        return true;
 	    }else {
 	    	return false;
 	    }
+    },
+    creatLoginCas:function(params){
+        return "cas_" + params.id + params.pw;
     }
 };
 module.exports = utils;

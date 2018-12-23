@@ -21,7 +21,11 @@ router.get('/ids/login', function(req, res, next) {
     if (callback) {
       //设置cookie 身份信息
       //没有跳转成功呢？？？？？？
-      res.redirect(callback);
+      var loginCas = utils.creatLoginCas(queryParam);
+      res.json({code:"ok",id:loginCas,cb:"http://localhost:8081/"});
+      //res.redirect("http://www.baidu.com");
+      //res.redirect("http://localhost:8081/");
+      //res.redirect(callback);
     }else {
       res.send('您打开的应用地址不对，请重新打开');
     }
