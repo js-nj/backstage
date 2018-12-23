@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/index.do', function(req, res, next) {
-  var isLogin = utils.checkLogin(req.cookies);
+  var isLogin = utils.checkLoginByCas(req.cookies);
   //res.send('respond with a /salary/index.do');
   if(isLogin){
     res.redirect('http://localhost:8081/');
